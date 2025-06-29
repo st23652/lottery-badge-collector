@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lottery Badge Collector</title>
+</head>
+<body>
+    <h1>Lottery Badge Collector Game</h1>
+
+    <form method="POST">
+        <label for="ticket">Enter your 6-digit lottery ticket number:</label><br/>
+        <input type="text" id="ticket" name="ticket" maxlength="6" pattern="\d{6}" required />
+        <button type="submit">Try Your Luck</button>
+    </form>
+
+    <p>{{ message }}</p>
+
+    <h2>Your Badges:</h2>
+    <p>
+        {% for badge in badges %}
+            {{ badge }}
+        {% else %}
+            No badges yet. Keep trying!
+        {% endfor %}
+    </p>
+</body>
+</html>
